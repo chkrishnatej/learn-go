@@ -14,4 +14,4 @@ clean_coverages:
 	rm -f *coverage*
 
 lint:
-	$(LINTER) run -v
+	$(LINTER) run
