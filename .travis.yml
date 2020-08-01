@@ -16,7 +16,7 @@ matrix:
 # Check webhook integration    
 notifications:
     email: false
-    webhooks: $LEARN_GO_WEBHOOK
+    webhooks: https://outlook.office.com/webhook/4891984d-3729-4660-9672-3426206bb845@134bef1a-28de-4899-82da-40088186188f/TravisCI/b1c2bc6f86e649c1a3f06f06d2ad3dd7/d12a00d4-2d1f-4cdc-af53-7a383c857434
 
 
 before_script:
