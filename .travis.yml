@@ -16,17 +16,11 @@ matrix:
 
     fast_finish: true
 
-install: true
-
 # Check webhook integration    
 notifications:
     email: false
 
-before_script:
-    - go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.27.0
-    
 script:
-    - golangci-lint run
     - go test ./... -race -coverprofile=coverage.txt -covermode=atomic
 
 after_success:
