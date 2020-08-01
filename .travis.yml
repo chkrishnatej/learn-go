@@ -1,11 +1,14 @@
 # Picked from https://gist.github.com/jonfriesen/1c64bebdd2b30ba1b2465c259f070459
 language: go
-sudo: false
+dist: bionic
 
 go:
   - 1.14.x
   - tip
   - release
+
+git:
+    depth: 1
 
 matrix:
     allow_failures:
@@ -18,18 +21,11 @@ notifications:
     email: false
 
 before_script:
-    - GO_FILES=$(find . -iname '*.go' -type f | grep -v /vendor/)
-    - go get github.com/golang/lint/golint
-    - go get honnef.co/go/tools/cmd/megacheck
-    - go get github.com/fzipp/gocyclo
+    - go install github.com/golangci/golangci-lint/cmd/golangci-lint
 
 script:
-    - test -z $(gofmt -s -l $GO_FILES)
-    - go test -race -coverprofile=coverage.txt -covermode=atomic
-    - go vet ./...
-    - megacheck ./...
-    - gocyclo -over 19 $GO_FILES
-    - golint -set_exit_status $(go list ./...)
+    - golangci-lint run
+    - go test ./... -race -coverprofile=coverage.txt -covermode=atomic
 
 after_success:
     - bash <(curl -s https://codecov.io/bash)
