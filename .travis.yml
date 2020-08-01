@@ -1,11 +1,11 @@
 # Picked from https://gist.github.com/jonfriesen/1c64bebdd2b30ba1b2465c259f070459
 language: go
+os: linux
+
 dist: bionic
 
 go:
   - 1.14.x
-  - tip
-  - release
 
 git:
     depth: 1
