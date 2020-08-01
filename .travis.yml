@@ -16,6 +16,8 @@ matrix:
 
     fast_finish: true
 
+install: true
+
 # Check webhook integration    
 notifications:
     email: false
