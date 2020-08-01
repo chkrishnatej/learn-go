@@ -16,7 +16,7 @@ matrix:
 # Check webhook integration    
 notifications:
     email: false
-    webhooks: $LEARN_GO_WEBHOOK
+    webhooks: "$LEARN_GO_WEBHOOK"
 
 
 before_script:
