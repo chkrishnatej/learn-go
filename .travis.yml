@@ -18,7 +18,7 @@ notifications:
 
 
 before_script:
-    - make pre_script
+    - make prescript
 
 script:
     - make travis_test
