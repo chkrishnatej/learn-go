@@ -18,7 +18,8 @@ notifications:
 
 
 before_script:
-    - make prescript
+    - make travis_get_linter
+    - make lint
 
 script:
     - make travis_test
